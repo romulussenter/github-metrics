@@ -3,6 +3,7 @@ import './App.css';
 
 //Components
 import UserSideBar from './UserSideBar';
+import UserInformation from './UserInformation';
 
 class App extends Component {
   constructor() {
@@ -22,11 +23,12 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='App--container'>
         <UserSideBar
           selectedUser={this.state.selectedUser}
           users={this.state.users} 
           onSelect={this.selectUser}/>
+        <UserInformation />
       </div>
     );
   }
