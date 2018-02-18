@@ -8,13 +8,13 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      users: []
+      users: ['justin1dennison']
     }
   }
   render() {
     return (
       <div>
-        <UserSideBar />
+        <UserSideBar users={this.state.users}/>
       </div>
     );
   }
