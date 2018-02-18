@@ -3,10 +3,15 @@ import './UserSideBar.css';
 
 class UserSideBar extends Component {
     render(){
-        const { users } = this.props;
+        const { users, selectedUser, onSelect } = this.props;
         const Users = users.map((user, index) =>{
-            return (<li key={index} className='UserSideBar--list-item'>
-                        <button>
+            const classes = selectedUser === user ? 
+                            'UserSideBar--list-item active' : 
+                            'UserSideBar--list-item';
+            return (<li key={index} 
+                        className={classes}
+                        >
+                        <button onClick={() => onSelect(user)}>
                             {user}
                         </button>
                     </li>);

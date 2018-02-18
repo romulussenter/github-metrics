@@ -36,3 +36,8 @@
     font-size: 1.25rem;
     cursor: pointer; 
 }
+
+/* Helpers */
+.active {
+    border: 3px solid yellow;
+}
