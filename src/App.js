@@ -15,10 +15,35 @@ class App extends Component {
       users: ['justin1dennison', 'jd'],
       selectedUser: '',
       userInfo: null, 
+      userToAdd: ''
     }
     this.selectUser = this.selectUser.bind(this);
+    this.updateUser = this.updateUser.bind(this);
+    this.addUser = this.addUser.bind(this);
+    this.removeUser = this.removeUser.bind(this);
+  } 
+  addUser(e, username){
+    e.preventDefault();
+    const { users } = this.state;
+    const newUserState = [ 
+      ...users,
+      username
+    ]; 
+    this.setState({
+      users: newUserState,
+      userToAdd: ''
+    });
   }
-
+  updateUser(e){
+    const val = e.target.value;
+    this.setState({
+      userToAdd: val
+    });
+  }
+  removeUser(username){
+    const { users } = this.state;
+    //finish the remove user portion
+  }
   selectUser(user){
     getUserInformation(user)
       .then(response => {
@@ -35,7 +60,11 @@ class App extends Component {
         <UserSideBar
           selectedUser={this.state.selectedUser}
           users={this.state.users} 
-          onSelect={this.selectUser}/>
+          onSelect={this.selectUser}
+          updateUser={this.updateUser}
+          addUser={this.addUser}
+          removeUser={this.removeUser}
+          username={this.state.userToAdd}/>
         <UserInformation info={this.state.userInfo}/>
       </div>
     );

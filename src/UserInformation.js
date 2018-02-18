@@ -7,7 +7,6 @@ class UserInformation extends Component {
         if (!info) {
             return <h1 className='UserInformation--header vertical-center'>Please Select a User</h1>
         }
-        console.log(info)
         return (
             <div className="UserInformation--container">
                 <h1 className="UserInformation--header">

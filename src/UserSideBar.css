@@ -1,5 +1,5 @@
 .UserSideBar--container {
-    height: 100vh;
+    height: 97vh;
     display: flex;
     border: 1px solid #aaa;
     width: 33vw;
@@ -19,6 +19,7 @@
     width: 100%;
     padding: 0;
     margin: 0;
+    flex-grow: 1;
 }
 
 .UserSideBar--list-item {
@@ -35,6 +36,22 @@
     width: 100%;
     font-size: 1.25rem;
     cursor: pointer; 
+}
+
+.UserSideBar--user-form {
+    width: 100%;
+    margin: 0;
+}
+
+.UserSideBar--user-form form{
+    width: 100%;
+}
+
+.UserSideBar--user-form input {
+    height: 3rem;
+    border-radius: 3px;
+    border: 1px solid #aaa;
+    box-shadow: none;
 }
 
 /* Helpers */

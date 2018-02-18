@@ -22,6 +22,14 @@ class UserSideBar extends Component {
                 <ul className='UserSideBar--list'>
                     {Users}
                 </ul> 
+                <div className="UserSideBar--user-form">
+                    <form onSubmit={(e) => this.props.addUser(e, this.props.username)}>
+                        <input type="text" 
+                            value={this.props.username} 
+                            placeholder='GitHub Username'
+                            onChange={e => this.props.updateUser(e)}/> 
+                    </form> 
+                </div>
             </div>
         );
     }
