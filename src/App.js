@@ -5,20 +5,28 @@ import './App.css';
 import UserSideBar from './UserSideBar';
 import UserInformation from './UserInformation';
 
+//utilities
+import { getUserInformation } from './services/github';
+
 class App extends Component {
   constructor() {
     super();
     this.state = {
       users: ['justin1dennison', 'jd'],
       selectedUser: '',
+      userInfo: {},
     }
     this.selectUser = this.selectUser.bind(this);
   }
 
   selectUser(user){
-    this.setState({
-      selectedUser: user
-    });
+    getUserInformation(user)
+      .then(response => {
+        this.setState({
+          selectedUser: user,
+          userInfo: response.data
+        });
+      })
   }
 
   render() {
@@ -28,7 +36,7 @@ class App extends Component {
           selectedUser={this.state.selectedUser}
           users={this.state.users} 
           onSelect={this.selectUser}/>
-        <UserInformation />
+        <UserInformation info={this.state.userInfo}/>
       </div>
     );
   }
