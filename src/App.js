@@ -14,7 +14,7 @@ class App extends Component {
     this.state = {
       users: ['justin1dennison', 'jd'],
       selectedUser: '',
-      userInfo: {},
+      userInfo: null, 
     }
     this.selectUser = this.selectUser.bind(this);
   }
