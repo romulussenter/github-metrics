@@ -1,0 +1,7 @@
+.UserSideBar--container {
+    height: 100vh;
+    display: flex;
+    border: 1px solid #aaa;
+    width: 33vw;
+    padding: 10px;
+}
