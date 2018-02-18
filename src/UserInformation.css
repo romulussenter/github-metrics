@@ -13,6 +13,11 @@
     width: 100%;
 }
 
+.UserInformation--header small {
+    font-size: 0.75rem;
+    color: #aaa;
+}
+
 .UserInformation--avatar {
     width: 30%;
     

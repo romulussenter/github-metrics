@@ -10,11 +10,18 @@ class UserInformation extends Component {
         console.log(info)
         return (
             <div className="UserInformation--container">
-                <h1 className="UserInformation--header">{info.login}</h1>
+                <h1 className="UserInformation--header">
+                    {info.name}
+                    <small>({info.login})</small>
+                </h1>
                 <div className="UserInformation--avatar-container">
                     <img src={info.avatar_url}
                         alt={info.login}
                         className="UserInformation--avatar" />
+                </div>
+                <div className="UserInformation--metrics">
+                    <p>Followers: {info.followers}</p> 
+                    <p>Gists: {info.public_gists}</p>
                 </div>
             </div>
         )
