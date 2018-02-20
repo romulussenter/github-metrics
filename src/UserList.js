@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import UserItem from './UserItem';
 
-class UserList extends Component {
-    render(){
-        const { users, selectedUser, onSelect, removeUser } = this.props;
+const UserList = props => {
+    
+        const { users, selectedUser, onSelect, removeUser } = props;
         const Users = users.map((user, index) => <UserItem 
                                                         key={index}
                                                         user={user}
@@ -17,7 +17,7 @@ class UserList extends Component {
             </ul>
         );
     }
-}
+
 
 
 

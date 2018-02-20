@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './UserSideBar.css';
 import UserList from './UserList';
 
 
 
-
-class UserSideBar extends Component {
-    render(){
-        const { users, selectedUser, onSelect, removeUser } = this.props;
+const UserSideBar = props => {
+        const { users, selectedUser, onSelect, removeUser } = props;
         
         return (
             <div className="UserSideBar--container">
@@ -20,7 +18,7 @@ class UserSideBar extends Component {
                 <div className="UserSideBar--user-form">
                     <form onSubmit={(e) => this.props.addUser(e, this.props.username)}>
                         <input type="text" 
-                            value={this.props.username} 
+                            value={props.username} 
                             placeholder='GitHub Username'
                             onChange={e => this.props.updateUser(e)}/> 
                     </form> 
@@ -29,6 +27,6 @@ class UserSideBar extends Component {
         );
     }
     
-}
+
 
 export default UserSideBar;
