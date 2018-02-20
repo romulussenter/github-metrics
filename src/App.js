@@ -42,6 +42,18 @@ class App extends Component {
   }
   removeUser(username){
     const { users } = this.state;
+    const index = users.indexOf(username);
+    const fisrt = users.slice(0, index);
+    const last =users.slice(index +1);
+    const newUsers =[
+      ...fisrt,
+      ...last
+  
+  ]
+  
+    this.setState({
+      users: newUsers
+    });
     //finish the remove user portion
   }
   selectUser(user){
